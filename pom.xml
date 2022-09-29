@@ -27,14 +27,14 @@
   </developers>
 
   <scm>
-    <connection>scm:git:git@github.com:egd-prodigal/scoa.git</connection>
-    <developerConnection>scm:git:git@github.com:egd-prodigal/scoa.git</developerConnection>
-    <url>git@github.com:egd-prodigal/scoa.git</url>
+    <connection>scm:git:git@github.com:egd-prodigal/scoa-archetype.git</connection>
+    <developerConnection>scm:git:git@github.com:egd-prodigal/scoa-archetype.git</developerConnection>
+    <url>git@github.com:egd-prodigal/scoa-archetype.git</url>
   </scm>
 
   <issueManagement>
     <system>Github Issue</system>
-    <url>https://github.com/egd-prodigal/scoa/issues</url>
+    <url>https://github.com/egd-prodigal/scoa-archetype/issues</url>
   </issueManagement>
 
   <licenses>

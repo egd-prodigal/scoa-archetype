@@ -3,31 +3,20 @@
 #set( $symbol_escape = '\' )
 package ${package}.app.service.impl;
 
-import ${package}.app.command.HistoryEventCmdExe;
-import ${package}.app.command.KillYanliangCmdExe;
+import ${package}.app.command.exe.HistoryEventCmdExe;
+import ${package}.app.command.exe.KillYanliangCmdExe;
 import ${package}.app.command.query.HistoryQueryExe;
-import ${package}.app.converter.HistoryEventConverter;
-import ${package}.model.vo.HistoryEventVO;
 import ${package}.app.service.StoryService;
-import ${package}.model.domain.Camp;
-import ${package}.model.domain.General;
-import ${package}.model.domain.Lord;
-import ${package}.model.domain.Warrior;
-import ${package}.model.factory.DomainObjectFactory;
-import ${package}.repository.entity.HistoryEventPO;
-import ${package}.repository.mapper.HistoryEventMapper;
+import ${package}.model.vo.HistoryEventVO;
 import ${package}.repository.mapper.PeopleMapper;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
+/**
+ * 历史故事服务接口实现
+ */
 @Service
 public class StoryServiceImpl implements StoryService {
-
-    private final Logger logger = LoggerFactory.getLogger(StoryServiceImpl.class);
 
     @Autowired
     PeopleMapper peopleMapper;
@@ -41,16 +30,27 @@ public class StoryServiceImpl implements StoryService {
     @Autowired
     private HistoryEventCmdExe historyEventCmdExe;
 
+    /**
+     * 演绎历史
+     */
     @Override
     public void performs() {
         killYanliangCmdExe.kill();
     }
 
+    /**
+     * 重置历史
+     */
     @Override
     public void reset() {
         historyEventCmdExe.reset();
     }
 
+    /**
+     * 查询历史
+     *
+     * @return HistoryEventVO
+     */
     @Override
     public HistoryEventVO queryHistory() {
         return historyQueryExe.queryHistory();

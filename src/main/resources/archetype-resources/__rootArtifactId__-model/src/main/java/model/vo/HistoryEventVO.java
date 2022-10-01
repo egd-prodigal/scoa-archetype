@@ -3,6 +3,9 @@
 #set( $symbol_escape = '\' )
 package ${package}.model.vo;
 
+/**
+ * 历史事件VO
+ */
 public class HistoryEventVO {
 
     private String event;

@@ -10,10 +10,21 @@ import ${package}.model.domain.General;
 import ${package}.model.domain.People;
 import org.springframework.beans.factory.annotation.Autowired;
 
+/**
+ * 将领信息查询客户端实现
+ */
 public class GeneralQueryProvider implements GeneralQueryClient {
     @Autowired
     private GeneralQueryExe generalQueryExe;
 
+    /**
+     * 查询将领信息
+     *
+     * @param firstName 姓
+     * @param lastName  名
+     * @param styleName 字
+     * @return 将领
+     */
     @Override
     public GeneralInfoDTO queryGeneral(String firstName, String lastName, String styleName) {
         General general = generalQueryExe.queryByName(firstName, lastName, styleName);
@@ -23,6 +34,5 @@ public class GeneralQueryProvider implements GeneralQueryClient {
                 + "卒于" + general.getDead());
         return dto;
     }
-
 
 }

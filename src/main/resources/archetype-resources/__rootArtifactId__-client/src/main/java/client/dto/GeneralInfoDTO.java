@@ -3,10 +3,19 @@
 #set( $symbol_escape = '\' )
 package ${package}.client.dto;
 
+/**
+ * 将领信息
+ */
 public class GeneralInfoDTO {
 
+    /**
+     * 姓名
+     */
     private String name;
 
+    /**
+     * 生卒年
+     */
     private String birthAndDead;
 
     public String getName() {
